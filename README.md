@@ -28,6 +28,14 @@ There is one class called DRLocalization, both files DRLocalization.h and DRLoca
 #include "DRLocalization.h"
 ```
 
+You chould also install the library using CocoaPods. To do so, you will need to add this line to your Podfile:
+
+	pod 'DRLocalization', :git => 'https://github.com/darrarski/DRLocalization.git'
+	
+and then run:
+
+	pod install
+
 ## Usage
 
 The localized string could be loaded from JSON file (should be included in you app bundle) or from NSDictionary that you could store in NSUserDefaults or for example download from remote server (when using AFNetworking, JSON returned by the server can be converted to a dictionary on the fly):
