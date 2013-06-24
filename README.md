@@ -7,7 +7,7 @@ Simple Objective-C library created to make non-stadard localizations of iOS appl
 
 DRLocalization can load translations directly from NSDictionary or from a file in JSON format, both should contains structure like in bellow example:  
 
-  {
+  	{
 	    "en": {
 	        "greeting": "Hello, %name%!",
 	        "message": "Tap on the buttons below to switch languages",
