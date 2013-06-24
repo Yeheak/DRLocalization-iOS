@@ -1,7 +1,7 @@
 DRLocalization
 ==============
 
-Simple Objective-C library created to make non-stadard localizations of iOS applicaions easier. The source is based on Baglan's MCLocalization library with some changes made to fullfil my project requirements. MCLocalization could be found here: https://raw.github.com/Baglan/MCLocalization
+Simple Objective-C library created to make non-stadard localizations of iOS applications easier. The source is based on Baglan's MCLocalization library with some changes made to fulfil my project requirements. MCLocalization could be found here: https://raw.github.com/Baglan/MCLocalization
 
 ## Loading translations
 
@@ -20,9 +20,9 @@ DRLocalization can load translations directly from NSDictionary or from a file i
 
 Collection of strings for each language is referenced by a canonicalized IETF BCP 47 language identifier (the same identifier used in NSLocale). Strings in a collection are further identified by keys.
 
-## Instalation
+## Installation
 
-There is one class called DRLocalization that should be included in the project you want to use it. You should only include a header file of that class in your code:
+There is one class called DRLocalization, both files DRLocalization.h and DRLocalization.m should be included in the project you want to use it. You should only include a header file of that class in your code:
 
 ```objective-c
 #include "DRLocalization.h"
@@ -51,7 +51,7 @@ will return a string in current language
 ```objective-c
 - (NSString *)stringForKey:(NSString *)key language:(NSString *)language;
 ```
-will return a string in given language (that should be a canonical IETF BCP 47 language indetifier)
+will return a string in given language (that should be a canonical IETF BCP 47 language identifier)
 
 ```objective-c
 - (NSString *)stringForKey:(NSString *)key withPlaceholders:(NSDictionary *)placeholders;
@@ -73,13 +73,13 @@ will call
 
 You could also:
 
-- get an array with canonical indetifiers of loaded languages:
+- get an array with canonical identifiers of loaded languages:
 
 ```objective-c
 NSArray *supportedLanguages = [[DRLocalization sharedInstance] supportedLanguages];
 ```
 
-- set current laguge:
+- set current languge:
 
 ```objective-c
 [[DRLocalization sharedInstance] setLanguage:@"en"];
