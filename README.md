@@ -30,7 +30,7 @@ There is one class called DRLocalization, both files DRLocalization.h and DRLoca
 
 You chould also install the library using CocoaPods. To do so, you will need to add this line to your Podfile:
 
-	pod 'DRLocalization', :git => 'https://github.com/darrarski/DRLocalization.git'
+	pod "DRLocalization", :git => "https://github.com/darrarski/DRLocalization-iOS.git"
 	
 and then run:
 
