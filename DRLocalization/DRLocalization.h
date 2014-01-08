@@ -3,7 +3,7 @@
 //  Surveyor-Horti
 //
 //  Created by Dariusz Rybicki on 24.06.2013.
-//  Copyright (c) 2013 EL Passion. All rights reserved.
+//  Copyright (c) 2013 Darrarski. All rights reserved.
 //
 //  Based on https://github.com/Baglan/MCLocalization
 //
