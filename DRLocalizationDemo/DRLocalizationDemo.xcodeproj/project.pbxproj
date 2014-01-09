@@ -18,6 +18,8 @@
 		31CACAFE187E11320089430E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31CACAFD187E11320089430E /* Images.xcassets */; };
 		31CACB1D187E119E0089430E /* DRLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CACB1C187E119E0089430E /* DRLocalization.m */; };
 		31CACB1F187E12560089430E /* translations.json in Resources */ = {isa = PBXBuildFile; fileRef = 31CACB1E187E12560089430E /* translations.json */; };
+		31CACB22187E15DE0089430E /* NSObject+DRLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CACB21187E15DE0089430E /* NSObject+DRLocalization.m */; };
+		31CACB28187E274E0089430E /* UILabel+DRLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CACB27187E274E0089430E /* UILabel+DRLocalization.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,10 @@
 		31CACB1B187E119E0089430E /* DRLocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRLocalization.h; sourceTree = "<group>"; };
 		31CACB1C187E119E0089430E /* DRLocalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRLocalization.m; sourceTree = "<group>"; };
 		31CACB1E187E12560089430E /* translations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = translations.json; sourceTree = "<group>"; };
+		31CACB20187E15DE0089430E /* NSObject+DRLocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DRLocalization.h"; sourceTree = "<group>"; };
+		31CACB21187E15DE0089430E /* NSObject+DRLocalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DRLocalization.m"; sourceTree = "<group>"; };
+		31CACB26187E274E0089430E /* UILabel+DRLocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+DRLocalization.h"; sourceTree = "<group>"; };
+		31CACB27187E274E0089430E /* UILabel+DRLocalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+DRLocalization.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,10 @@
 			children = (
 				31CACB1B187E119E0089430E /* DRLocalization.h */,
 				31CACB1C187E119E0089430E /* DRLocalization.m */,
+				31CACB20187E15DE0089430E /* NSObject+DRLocalization.h */,
+				31CACB21187E15DE0089430E /* NSObject+DRLocalization.m */,
+				31CACB26187E274E0089430E /* UILabel+DRLocalization.h */,
+				31CACB27187E274E0089430E /* UILabel+DRLocalization.m */,
 			);
 			name = DRLocalization;
 			path = ../DRLocalization;
@@ -188,8 +198,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				31CACAF6187E11320089430E /* DRAppDelegate.m in Sources */,
+				31CACB28187E274E0089430E /* UILabel+DRLocalization.m in Sources */,
 				31CACAFC187E11320089430E /* DRViewController.m in Sources */,
 				31CACB1D187E119E0089430E /* DRLocalization.m in Sources */,
+				31CACB22187E15DE0089430E /* NSObject+DRLocalization.m in Sources */,
 				31CACAF2187E11320089430E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -18,32 +18,11 @@
 
 @implementation DRViewController
 
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-	if((self = [super initWithCoder:aDecoder])) {
-		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(localize) name:DRLocalizationLanguageDidChangeNotification object:nil];
-	}
-	return self;
-}
-
-- (void)dealloc
-{
-	[[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	
-	[self localize];
 	[self setupSegmentedControl];
-}
-
-#pragma mark - Localization
-
-- (void)localize
-{
-	self.label.text = [[DRLocalization sharedInstance] stringForKey:@"hello_world"];
 }
 
 #pragma mark - Language switcher
