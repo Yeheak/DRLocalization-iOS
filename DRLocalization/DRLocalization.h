@@ -9,6 +9,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NSObject+DRLocalization.h"
 
 #define DRLocalizationLanguageDidChangeNotification @"DRLocalizationLanguageDidChangeNotification"
 
