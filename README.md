@@ -1,13 +1,15 @@
 DRLocalization
 ==============
 
-Simple Objective-C library created to make non-standard localizations of iOS applications easier. It allows to load translations from external sources, as well as using standard iOS localized strings. Localization setup for objects of any type can be setup and proceeded programatically or using interface builder. If you are looking for specific version of the library, checkout those branches:
+Simple Objective-C library created to make non-standard localizations of iOS applications easier. It allows to load translations from external sources, as well as using standard iOS localized strings. Localization setup for objects of any type can be setup and proceeded programatically or using interface builder. Tested under iOS 7. If you are looking for specific version of the library, checkout those branches:
 
 - For development version - [master branch](../../tree/master)
 - For v0.2.x - [branch 0.2](../../tree/0.2)
 - For v0.1.x - [branch 0.1](../../tree/0.1)
 
 **Notice:** Versions 0.2.x are not backward compatible with versions 0.1.x. If you would like to stay with version 0.1.x please update your Podfile so it points to specific version branch (see [README.md](../../blob/0.1/README.md) file on branch 0.1 for example)
+
+![DRLocalizationDemo screenshot 1](DRLocalizationDemo/screenshot1.png "DRLocalizationDemo screenshot 1")
 
 ## Installation
 

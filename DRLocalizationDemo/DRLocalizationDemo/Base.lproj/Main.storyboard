@@ -13,7 +13,7 @@
                         <viewControllerLayoutGuide type="bottom" id="b5s-He-Dul"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0LE-CH-gCR">
@@ -39,14 +39,27 @@
                                     <segment title="Second"/>
                                 </segments>
                             </segmentedControl>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1xa-5O-p3e">
+                                <rect key="frame" x="20" y="117" width="280" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="JUh-K8-S3u"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="DRLocalizationKey" value="flag_image"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Yr2-z4-oLe" firstAttribute="top" secondItem="jD4-6Y-l2W" secondAttribute="bottom" constant="20" id="1xc-Qa-Zpw"/>
+                            <constraint firstItem="1xa-5O-p3e" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="FCx-Pt-4ZK"/>
+                            <constraint firstItem="1xa-5O-p3e" firstAttribute="top" secondItem="0LE-CH-gCR" secondAttribute="bottom" constant="8" id="PG9-ag-Rtu"/>
                             <constraint firstItem="0LE-CH-gCR" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="TNL-NY-BYH"/>
                             <constraint firstItem="Yr2-z4-oLe" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="WEJ-DO-Hwe"/>
                             <constraint firstAttribute="trailing" secondItem="0LE-CH-gCR" secondAttribute="trailing" constant="20" id="YCn-6Q-rmq"/>
                             <constraint firstItem="0LE-CH-gCR" firstAttribute="top" secondItem="Yr2-z4-oLe" secondAttribute="bottom" constant="20" id="nLW-gL-CTX"/>
+                            <constraint firstAttribute="trailing" secondItem="1xa-5O-p3e" secondAttribute="trailing" constant="20" id="vOs-Xw-CXd"/>
                             <constraint firstAttribute="trailing" secondItem="Yr2-z4-oLe" secondAttribute="trailing" constant="20" id="yoq-cT-r4N"/>
                         </constraints>
                     </view>
@@ -62,6 +75,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
 </document>

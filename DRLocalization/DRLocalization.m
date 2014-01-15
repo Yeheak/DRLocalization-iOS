@@ -70,14 +70,22 @@ static NSString *DRLocalizationCurrentLanguageUserDefaultsKey = @"DRLocalization
 - (NSString *)currentLanguage
 {
 	if (!_currentLanguage) {
+		
+		NSString *(^currentLanguage)() = ^() {
+			if (!self.useSystemPreferredLanguages && self.fallbackLanguage) {
+				return [self.fallbackLanguage copy];
+			}
+			return [[self systemPreferredLanguage] copy];
+		};
+		
 		if (self.persistCurrentLanguage) {
 			_currentLanguage = [[NSUserDefaults standardUserDefaults] objectForKey:DRLocalizationCurrentLanguageUserDefaultsKey];
 			if (!_currentLanguage) {
-				_currentLanguage = [self systemPreferredLanguage];
+				_currentLanguage = currentLanguage();
 			}
 		}
 		else {
-			_currentLanguage = [self systemPreferredLanguage];
+			_currentLanguage = currentLanguage();
 		}
 	}
 	return _currentLanguage;

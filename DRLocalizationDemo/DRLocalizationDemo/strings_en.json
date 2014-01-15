@@ -1,3 +1,7 @@
 {
-	"hello_world": "Hello World"
+	"language_en": "English",
+	"language_pl": "Polish",
+	"language_de": "German",
+	"hello_world": "Hello World",
+	"flag_image": "flag-en"
 }
