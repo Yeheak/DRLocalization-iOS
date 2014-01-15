@@ -62,20 +62,20 @@
 	// include localizations from system localized strings
 	[[DRLocalization sharedInstance] addLocalizationStore:[[DRLocalizationStandardStore alloc] init]];
 	
-	// include localizations from JSON file - English
+	// include localizations from JSON file - German
 	[[DRLocalization sharedInstance] addLocalizationStore:
-	 [[DRLocalizationJSONFileStore alloc] initWithFilePath:[[NSBundle mainBundle] pathForResource:@"strings_en.json" ofType:nil]
-									 andSupportedLanguages:@[ @"en" ]]];
+	 [[DRLocalizationJSONFileStore alloc] initWithFilePath:[[NSBundle mainBundle] pathForResource:@"strings_de.json" ofType:nil]
+									 andSupportedLanguages:@[ @"de" ]]];
 	
 	// include localizations from JSON file - Polish
 	[[DRLocalization sharedInstance] addLocalizationStore:
 	 [[DRLocalizationJSONFileStore alloc] initWithFilePath:[[NSBundle mainBundle] pathForResource:@"strings_pl.json" ofType:nil]
 									 andSupportedLanguages:@[ @"pl" ]]];
 	
-	// include localizations from JSON file - German
+	// include localizations from JSON file - English
 	[[DRLocalization sharedInstance] addLocalizationStore:
-	 [[DRLocalizationJSONFileStore alloc] initWithFilePath:[[NSBundle mainBundle] pathForResource:@"strings_de.json" ofType:nil]
-									 andSupportedLanguages:@[ @"de" ]]];
+	 [[DRLocalizationJSONFileStore alloc] initWithFilePath:[[NSBundle mainBundle] pathForResource:@"strings_en.json" ofType:nil]
+									 andSupportedLanguages:@[ @"en" ]]];
 }
 
 @end
