@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31C965DE1886A5A90098D454 /* DRLocalizationDeallocHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C965DD1886A5A90098D454 /* DRLocalizationDeallocHelper.m */; };
+		31C965E21886A6150098D454 /* DRLocalizationStandardStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C965E11886A6150098D454 /* DRLocalizationStandardStore.m */; };
+		31C965E51886B3500098D454 /* DRLocalizationJSONFileStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C965E41886B3500098D454 /* DRLocalizationJSONFileStore.m */; };
+		31C965E71886B5B90098D454 /* strings_en.json in Resources */ = {isa = PBXBuildFile; fileRef = 31C965E61886B5B90098D454 /* strings_en.json */; };
+		31C965E91886B5C50098D454 /* strings_pl.json in Resources */ = {isa = PBXBuildFile; fileRef = 31C965E81886B5C50098D454 /* strings_pl.json */; };
+		31C965EB1886B5F40098D454 /* strings_de.json in Resources */ = {isa = PBXBuildFile; fileRef = 31C965EA1886B5F40098D454 /* strings_de.json */; };
 		31CACAE6187E11320089430E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31CACAE5187E11320089430E /* Foundation.framework */; };
 		31CACAE8187E11320089430E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31CACAE7187E11320089430E /* CoreGraphics.framework */; };
 		31CACAEA187E11320089430E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31CACAE9187E11320089430E /* UIKit.framework */; };
@@ -17,12 +23,21 @@
 		31CACAFC187E11320089430E /* DRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CACAFB187E11320089430E /* DRViewController.m */; };
 		31CACAFE187E11320089430E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31CACAFD187E11320089430E /* Images.xcassets */; };
 		31CACB1D187E119E0089430E /* DRLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CACB1C187E119E0089430E /* DRLocalization.m */; };
-		31CACB1F187E12560089430E /* translations.json in Resources */ = {isa = PBXBuildFile; fileRef = 31CACB1E187E12560089430E /* translations.json */; };
 		31CACB22187E15DE0089430E /* NSObject+DRLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CACB21187E15DE0089430E /* NSObject+DRLocalization.m */; };
 		31CACB28187E274E0089430E /* UILabel+DRLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CACB27187E274E0089430E /* UILabel+DRLocalization.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		31C965DC1886A5A90098D454 /* DRLocalizationDeallocHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRLocalizationDeallocHelper.h; sourceTree = "<group>"; };
+		31C965DD1886A5A90098D454 /* DRLocalizationDeallocHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRLocalizationDeallocHelper.m; sourceTree = "<group>"; };
+		31C965DF1886A5ED0098D454 /* DRLocalizationStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DRLocalizationStore.h; sourceTree = "<group>"; };
+		31C965E01886A6150098D454 /* DRLocalizationStandardStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRLocalizationStandardStore.h; sourceTree = "<group>"; };
+		31C965E11886A6150098D454 /* DRLocalizationStandardStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRLocalizationStandardStore.m; sourceTree = "<group>"; };
+		31C965E31886B3500098D454 /* DRLocalizationJSONFileStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRLocalizationJSONFileStore.h; sourceTree = "<group>"; };
+		31C965E41886B3500098D454 /* DRLocalizationJSONFileStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRLocalizationJSONFileStore.m; sourceTree = "<group>"; };
+		31C965E61886B5B90098D454 /* strings_en.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = strings_en.json; sourceTree = "<group>"; };
+		31C965E81886B5C50098D454 /* strings_pl.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = strings_pl.json; sourceTree = "<group>"; };
+		31C965EA1886B5F40098D454 /* strings_de.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = strings_de.json; sourceTree = "<group>"; };
 		31CACAE2187E11320089430E /* DRLocalizationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DRLocalizationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31CACAE5187E11320089430E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		31CACAE7187E11320089430E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -40,7 +55,6 @@
 		31CACB04187E11320089430E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		31CACB1B187E119E0089430E /* DRLocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRLocalization.h; sourceTree = "<group>"; };
 		31CACB1C187E119E0089430E /* DRLocalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRLocalization.m; sourceTree = "<group>"; };
-		31CACB1E187E12560089430E /* translations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = translations.json; sourceTree = "<group>"; };
 		31CACB20187E15DE0089430E /* NSObject+DRLocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DRLocalization.h"; sourceTree = "<group>"; };
 		31CACB21187E15DE0089430E /* NSObject+DRLocalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DRLocalization.m"; sourceTree = "<group>"; };
 		31CACB26187E274E0089430E /* UILabel+DRLocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+DRLocalization.h"; sourceTree = "<group>"; };
@@ -100,7 +114,9 @@
 				31CACAFD187E11320089430E /* Images.xcassets */,
 				31CACAF7187E11320089430E /* Main.storyboard */,
 				31CACAEC187E11320089430E /* Supporting Files */,
-				31CACB1E187E12560089430E /* translations.json */,
+				31C965E61886B5B90098D454 /* strings_en.json */,
+				31C965E81886B5C50098D454 /* strings_pl.json */,
+				31C965EA1886B5F40098D454 /* strings_de.json */,
 			);
 			path = DRLocalizationDemo;
 			sourceTree = "<group>";
@@ -121,6 +137,13 @@
 			children = (
 				31CACB1B187E119E0089430E /* DRLocalization.h */,
 				31CACB1C187E119E0089430E /* DRLocalization.m */,
+				31C965DC1886A5A90098D454 /* DRLocalizationDeallocHelper.h */,
+				31C965DD1886A5A90098D454 /* DRLocalizationDeallocHelper.m */,
+				31C965E31886B3500098D454 /* DRLocalizationJSONFileStore.h */,
+				31C965E41886B3500098D454 /* DRLocalizationJSONFileStore.m */,
+				31C965E01886A6150098D454 /* DRLocalizationStandardStore.h */,
+				31C965E11886A6150098D454 /* DRLocalizationStandardStore.m */,
+				31C965DF1886A5ED0098D454 /* DRLocalizationStore.h */,
 				31CACB20187E15DE0089430E /* NSObject+DRLocalization.h */,
 				31CACB21187E15DE0089430E /* NSObject+DRLocalization.m */,
 				31CACB26187E274E0089430E /* UILabel+DRLocalization.h */,
@@ -183,10 +206,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31C965E91886B5C50098D454 /* strings_pl.json in Resources */,
 				31CACAFE187E11320089430E /* Images.xcassets in Resources */,
+				31C965E71886B5B90098D454 /* strings_en.json in Resources */,
 				31CACAF0187E11320089430E /* InfoPlist.strings in Resources */,
+				31C965EB1886B5F40098D454 /* strings_de.json in Resources */,
 				31CACAF9187E11320089430E /* Main.storyboard in Resources */,
-				31CACB1F187E12560089430E /* translations.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,8 +224,11 @@
 			files = (
 				31CACAF6187E11320089430E /* DRAppDelegate.m in Sources */,
 				31CACB28187E274E0089430E /* UILabel+DRLocalization.m in Sources */,
+				31C965DE1886A5A90098D454 /* DRLocalizationDeallocHelper.m in Sources */,
+				31C965E51886B3500098D454 /* DRLocalizationJSONFileStore.m in Sources */,
 				31CACAFC187E11320089430E /* DRViewController.m in Sources */,
 				31CACB1D187E119E0089430E /* DRLocalization.m in Sources */,
+				31C965E21886A6150098D454 /* DRLocalizationStandardStore.m in Sources */,
 				31CACB22187E15DE0089430E /* NSObject+DRLocalization.m in Sources */,
 				31CACAF2187E11320089430E /* main.m in Sources */,
 			);
@@ -345,6 +373,7 @@
 				31CACB16187E11320089430E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

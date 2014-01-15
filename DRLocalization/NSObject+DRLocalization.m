@@ -1,6 +1,6 @@
 //
 //  NSObject+DRLocalization.m
-//  DRLocalizationDemo
+//  DRLocalization
 //
 //  Created by Dariusz Rybicki on 09.01.2014.
 //  Copyright (c) 2014 Darrarski. All rights reserved.
@@ -9,39 +9,11 @@
 #import "NSObject+DRLocalization.h"
 #import <objc/runtime.h>
 #import "DRLocalization.h"
+#import "DRLocalizationDeallocHelper.h"
 
 static NSString *DRLocalizationKeyKey = @"DRLocalizationKeyKey";
 static NSString *DRLocalizationKeyPathKey = @"DRLocalizationKeyPathKey";
 static NSString *DRLocalizationDeallocHelperKey = @"DRLocalizationDeallocHelperKey";
-
-#pragma mark - DRLocalizationDeallocHelper
-
-@interface DRLocalizationDeallocHelper : NSObject
-
-@property (nonatomic, copy) void(^deallocBlock)();
-
-@end
-
-@implementation DRLocalizationDeallocHelper
-
-- (id)initWithBlock:(void(^)())block
-{
-	if (self = [super init]) {
-		self.deallocBlock = block;
-	}
-	return self;
-}
-
-- (void)dealloc
-{
-	if (self.deallocBlock) {
-		self.deallocBlock();
-	}
-}
-
-@end
-
-#pragma mark - NSObject+DRLocalization
 
 @implementation NSObject (DRLocalization)
 
@@ -49,12 +21,10 @@ static NSString *DRLocalizationDeallocHelperKey = @"DRLocalizationDeallocHelperK
 
 - (void)setupDRLocalization
 {
-	DRLocalizationDeallocHelper *deallocHelper = objc_getAssociatedObject(self, (__bridge const void *)(DRLocalizationDeallocHelperKey));
-	
-	if (!deallocHelper) {
+	if (![self DRLocalizationDeallocHelper]) {
 		NSObject * __weak selfWeak = self;
 		
-		id observer = [[NSNotificationCenter defaultCenter] addObserverForName:DRLocalizationLanguageDidChangeNotification
+		id observer = [[NSNotificationCenter defaultCenter] addObserverForName:DRLocalizationLanguageDidChangeNotificationName
 																		object:nil
 																		 queue:[NSOperationQueue mainQueue]
 																	usingBlock:^(NSNotification *note) {
@@ -62,11 +32,9 @@ static NSString *DRLocalizationDeallocHelperKey = @"DRLocalizationDeallocHelperK
 																		[selfStrong DRLocalize];
 																	}];
 		
-		deallocHelper = [[DRLocalizationDeallocHelper alloc] initWithBlock:^{
+		[self setDRLocalizationDeallocHelper:[[DRLocalizationDeallocHelper alloc] initWithBlock:^{
 			[[NSNotificationCenter defaultCenter] removeObserver:observer];
-		}];
-		
-		objc_setAssociatedObject(self, (__bridge void *)(DRLocalizationDeallocHelperKey), deallocHelper, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+		}]];
 		
 		[self DRLocalize];
 	}
@@ -86,10 +54,19 @@ static NSString *DRLocalizationDeallocHelperKey = @"DRLocalizationDeallocHelperK
 
 #pragma mark Getters and setters
 
+- (void)setDRLocalizationDeallocHelper:(DRLocalizationDeallocHelper *)deallocHelper
+{
+	objc_setAssociatedObject(self, (__bridge void *)(DRLocalizationDeallocHelperKey), deallocHelper, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (DRLocalizationDeallocHelper *)DRLocalizationDeallocHelper
+{
+	return objc_getAssociatedObject(self, (__bridge const void *)(DRLocalizationDeallocHelperKey));
+}
+
 - (void)setDRLocalizationKey:(NSString *)key
 {
-	objc_setAssociatedObject(self, (__bridge void *)(DRLocalizationKeyKey), key, OBJC_ASSOCIATION_COPY);
-	
+	objc_setAssociatedObject(self, (__bridge void *)(DRLocalizationKeyKey), [key copy], OBJC_ASSOCIATION_COPY);
 	[self setupDRLocalization];
 }
 
@@ -100,9 +77,7 @@ static NSString *DRLocalizationDeallocHelperKey = @"DRLocalizationDeallocHelperK
 
 - (void)setDRLocalizationKeyPath:(NSString *)keyPath
 {
-	objc_setAssociatedObject(self, (__bridge void *)(DRLocalizationKeyPathKey), keyPath, OBJC_ASSOCIATION_COPY);
-	
-	[self setupDRLocalization];
+	objc_setAssociatedObject(self, (__bridge void *)(DRLocalizationKeyPathKey), [keyPath copy], OBJC_ASSOCIATION_COPY);
 }
 
 - (NSString *)DRLocalizationKeyPath

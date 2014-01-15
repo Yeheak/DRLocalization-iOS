@@ -30,12 +30,12 @@
 - (void)setupSegmentedControl
 {
 	// propagate segmented control with supported languages
-	NSArray *supportedLanguages = [[DRLocalization sharedInstance] supportedLanguages];
+	NSOrderedSet *supportedLanguages = [[DRLocalization sharedInstance] supportedLanguages];
 	[self.segmentedControl removeAllSegments];
 	[supportedLanguages enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
 		NSString *langCode = (NSString *)obj;
 		[self.segmentedControl insertSegmentWithTitle:langCode atIndex:idx animated:NO];
-		if ([[[DRLocalization sharedInstance] language] isEqualToString:langCode]) {
+		if ([[[DRLocalization sharedInstance] currentLanguage] isEqualToString:langCode]) {
 			self.segmentedControl.selectedSegmentIndex = idx;
 		}
 	}];
@@ -55,7 +55,7 @@
 	NSString *langCode = [[[DRLocalization sharedInstance] supportedLanguages] objectAtIndex:langIdx];
 	
 	// change language
-	[[DRLocalization sharedInstance] setLanguage:langCode];
+	[[DRLocalization sharedInstance] setCurrentLanguage:langCode];
 }
 
 @end

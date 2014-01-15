@@ -13,9 +13,23 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-	// load translations from JSON file
-	NSString * path = [[NSBundle mainBundle] pathForResource:@"translations.json" ofType:nil];
-	[[DRLocalization sharedInstance] loadFromJSONFile:path defaultLanguage:@"en"];
+	// include localizations from system localized strings
+	[[DRLocalization sharedInstance] addLocalizationStore:[[DRLocalizationStandardStore alloc] init]];
+	
+	// include localizations from JSON file - English
+	[[DRLocalization sharedInstance] addLocalizationStore:
+	 [[DRLocalizationJSONFileStore alloc] initWithFilePath:[[NSBundle mainBundle] pathForResource:@"strings_en.json" ofType:nil]
+									 andSupportedLanguages:@[ @"en" ]]];
+	
+	// include localizations from JSON file - Polish
+	[[DRLocalization sharedInstance] addLocalizationStore:
+	 [[DRLocalizationJSONFileStore alloc] initWithFilePath:[[NSBundle mainBundle] pathForResource:@"strings_pl.json" ofType:nil]
+									 andSupportedLanguages:@[ @"pl" ]]];
+	
+	// include localizations from JSON file - German
+	[[DRLocalization sharedInstance] addLocalizationStore:
+	 [[DRLocalizationJSONFileStore alloc] initWithFilePath:[[NSBundle mainBundle] pathForResource:@"strings_de.json" ofType:nil]
+									 andSupportedLanguages:@[ @"de" ]]];
 	
     return YES;
 }
