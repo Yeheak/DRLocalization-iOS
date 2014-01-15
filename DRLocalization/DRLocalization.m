@@ -127,7 +127,7 @@ static NSString *DRLocalizationCurrentLanguageUserDefaultsKey = @"DRLocalization
 	
 	[self.localizationStores enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
 		id<DRLocalizationStore> localizationStore = obj;
-		NSString *stringFromStore = [localizationStore stringForKey:key forLanguage:self.currentLanguage];
+		NSString *stringFromStore = [localizationStore stringForKey:key forLanguage:language];
 		if (stringFromStore) {
 			string = [stringFromStore copy];
 			*stop = YES;
