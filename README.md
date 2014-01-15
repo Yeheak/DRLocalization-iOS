@@ -1,26 +1,36 @@
 DRLocalization
 ==============
 
-Simple Objective-C library created to make non-stadard localizations of iOS applications easier. The source is based on Baglan's MCLocalization library with some changes made to fulfil my project requirements. MCLocalization could be found here: https://raw.github.com/Baglan/MCLocalization
+Simple Objective-C library created to make non-standard localizations of iOS applications easier. It allows to load translations from external sources, as well as using standard iOS localized strings. Localization setup for objects of any type can be setup and proceeded programatically or using interface builder. If you are looking for specific version of the library, checkout those branches:
 
-## Loading translations
-
-Documentation under construction
+- For development version - [master branch](../../tree/master)
+- For v0.2.x - [branch 0.2](../../tree/0.2)
+- For v0.1.x - [branch 0.1](../../tree/0.1)
 
 ## Installation
 
-You can install the library using CocoaPods. To do so, you will need to add this line to your Podfile:
+You can install the library using CocoaPods. To do so, you will need to add one of the following lines to your Podfile:
 
-	pod "DRLocalization", :git => "https://github.com/darrarski/DRLocalization-iOS", :branch => "0.2"
-	
-and then run:
+For most recent or development version:
 
-	pod install
+	pod "DRLocalization", :git => "https://github.com/darrarski/DRLocalization-iOS"
+
+For specific version:
+
+	pod "DRLocalization", :git => "https://github.com/darrarski/DRLocalization-iOS", :branch => "VERSION_BRANCH"
+
+Where `VERSION_BRANCH` you should put the branch name for given version (ex. "0.1", "0.2"). It is recommended to set version branch explicity, as backward compatibility between those branches is not warranted. Master branch always contains the most recent version.
 
 ## Usage
 
-Documentation under construction
+Public methods of the library are documented in-code. For detailed examples check out attached demo project.
 
 ## License
 
 Code in this project is available under the MIT license.
+
+## Credits
+
+The library is using concepts from:
+- [MCLocalization](https://raw.github.com/Baglan/MCLocalization)
+- [DPLocalization](https://github.com/nullic/DPLocalizationManager)
