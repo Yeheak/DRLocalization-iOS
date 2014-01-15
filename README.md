@@ -32,5 +32,6 @@ Code in this project is available under the MIT license.
 ## Credits
 
 The library is using concepts from:
+
 - [MCLocalization](https://raw.github.com/Baglan/MCLocalization)
 - [DPLocalization](https://github.com/nullic/DPLocalizationManager)
