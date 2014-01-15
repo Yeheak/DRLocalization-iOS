@@ -123,20 +123,57 @@ static NSString *DRLocalizationCurrentLanguageUserDefaultsKey = @"DRLocalization
 
 - (NSString *)stringForKey:(NSString *)key forLanguage:(NSString *)language
 {
+	return [self stringForKey:key forLanguage:language useFallbackLanguage:YES];
+}
+
+- (NSString *)stringForKey:(NSString *)key forLanguage:(NSString *)language useFallbackLanguage:(BOOL)fallback
+{
 	NSString __block *string = nil;
 	
+	// search for string in registered localization stores
 	[self.localizationStores enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
 		id<DRLocalizationStore> localizationStore = obj;
-		NSString *stringFromStore = [localizationStore stringForKey:key forLanguage:self.currentLanguage];
+		NSString *stringFromStore = [localizationStore stringForKey:key forLanguage:language];
 		if (stringFromStore) {
 			string = [stringFromStore copy];
 			*stop = YES;
 		}
 	}];
 	
+	// if string not found in registered localization stores
 	if (!string) {
-		NSLog(@"Localization not found for key: %@ and language: %@", key, language);
-		string = [key copy];
+		
+		if (fallback) {
+			
+			// if usign system preferred languages is enabled
+			if (self.useSystemPreferredLanguages) {
+				// search for string in user's preferred language
+				[[NSLocale preferredLanguages] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+					NSString *preferredLanguage = obj;
+					if (![preferredLanguage isEqualToString:language]) {
+						string = [self stringForKey:key forLanguage:preferredLanguage useFallbackLanguage:NO];
+						if (string) {
+							*stop = YES;
+						}
+					}
+				}];
+			}
+			
+			// if string not found in user's preferred language and fallback language is set
+			if (!string && self.fallbackLanguage) {
+				// serach for string in fallback language
+				if (self.fallbackLanguage && ![self.fallbackLanguage isEqualToString:language]) {
+					string = [self stringForKey:key	forLanguage:self.fallbackLanguage useFallbackLanguage:NO];
+				}
+			}
+		}
+		
+		if (!string && fallback) {
+			#ifdef DEBUG
+				NSLog(@"Localization not found for key: \"%@\" language: \"%@\"", key, language);
+			#endif
+			string = [key copy];
+		}
 	}
 	
 	return string;
