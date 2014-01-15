@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		316FA2661886D14B0090E674 /* UIButton+DRLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 316FA2651886D14B0090E674 /* UIButton+DRLocalization.m */; };
 		31C965DE1886A5A90098D454 /* DRLocalizationDeallocHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C965DD1886A5A90098D454 /* DRLocalizationDeallocHelper.m */; };
 		31C965E21886A6150098D454 /* DRLocalizationStandardStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C965E11886A6150098D454 /* DRLocalizationStandardStore.m */; };
 		31C965E51886B3500098D454 /* DRLocalizationJSONFileStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C965E41886B3500098D454 /* DRLocalizationJSONFileStore.m */; };
@@ -28,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		316FA2641886D14B0090E674 /* UIButton+DRLocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+DRLocalization.h"; sourceTree = "<group>"; };
+		316FA2651886D14B0090E674 /* UIButton+DRLocalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+DRLocalization.m"; sourceTree = "<group>"; };
 		31C965DC1886A5A90098D454 /* DRLocalizationDeallocHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRLocalizationDeallocHelper.h; sourceTree = "<group>"; };
 		31C965DD1886A5A90098D454 /* DRLocalizationDeallocHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRLocalizationDeallocHelper.m; sourceTree = "<group>"; };
 		31C965DF1886A5ED0098D454 /* DRLocalizationStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DRLocalizationStore.h; sourceTree = "<group>"; };
@@ -146,6 +149,8 @@
 				31C965DF1886A5ED0098D454 /* DRLocalizationStore.h */,
 				31CACB20187E15DE0089430E /* NSObject+DRLocalization.h */,
 				31CACB21187E15DE0089430E /* NSObject+DRLocalization.m */,
+				316FA2641886D14B0090E674 /* UIButton+DRLocalization.h */,
+				316FA2651886D14B0090E674 /* UIButton+DRLocalization.m */,
 				31CACB26187E274E0089430E /* UILabel+DRLocalization.h */,
 				31CACB27187E274E0089430E /* UILabel+DRLocalization.m */,
 			);
@@ -228,6 +233,7 @@
 				31C965E51886B3500098D454 /* DRLocalizationJSONFileStore.m in Sources */,
 				31CACAFC187E11320089430E /* DRViewController.m in Sources */,
 				31CACB1D187E119E0089430E /* DRLocalization.m in Sources */,
+				316FA2661886D14B0090E674 /* UIButton+DRLocalization.m in Sources */,
 				31C965E21886A6150098D454 /* DRLocalizationStandardStore.m in Sources */,
 				31CACB22187E15DE0089430E /* NSObject+DRLocalization.m in Sources */,
 				31CACAF2187E11320089430E /* main.m in Sources */,
