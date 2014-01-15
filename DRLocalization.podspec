@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
   s.name         = "DRLocalization"
-  s.version      = "0.1.1"
+  s.version      = "0.2.0"
   s.summary      = "Simple Objective-C library created to make non-stadard localizations of iOS applicaions easier."
   s.homepage     = "http://bitbucket.org/darrarski/drlocalization-ios"
   s.license      = 'MIT'
   s.author       = { "Darrarski" => "darrarski@gmail.com" }
-  s.source       = { :git => "https://bitbucket.org/darrarski/drlocalization-ios.git", :tag => "0.1.1" }
+  s.source       = { :git => "https://bitbucket.org/darrarski/drlocalization-ios.git", :tag => "0.2.0" }
   s.platform     = :ios
   s.source_files = 'DRLocalization'
   s.requires_arc = true
