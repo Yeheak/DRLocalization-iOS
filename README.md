@@ -7,6 +7,8 @@ Simple Objective-C library created to make non-standard localizations of iOS app
 - For v0.2.x - [branch 0.2](../../tree/0.2)
 - For v0.1.x - [branch 0.1](../../tree/0.1)
 
+**Notice:** Versions 0.2.x are not backward compatible with versions 0.1.x. If you would like to stay with version 0.1.x please update your Podfile so it points to specific version branch (see [README.md](../../blob/0.1/README.md) file on branch 0.1 for example)
+
 ## Installation
 
 You can install the library using CocoaPods. To do so, you will need to add one of the following lines to your Podfile:
