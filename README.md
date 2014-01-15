@@ -11,7 +11,7 @@ Documentation under construction
 
 You can install the library using CocoaPods. To do so, you will need to add this line to your Podfile:
 
-	pod "DRLocalization", :git => "https://github.com/darrarski/DRLocalization-iOS"
+	pod "DRLocalization", :git => "https://github.com/darrarski/DRLocalization-iOS", :branch => "0.2"
 	
 and then run:
 
