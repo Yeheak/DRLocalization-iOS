@@ -18,11 +18,28 @@
 
 @implementation DRViewController
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+	if (self = [super initWithCoder:aDecoder]) {
+		[[NSNotificationCenter defaultCenter] addObserver:self
+												 selector:@selector(localizeSegmentedControl)
+													 name:DRLocalizationLanguageDidChangeNotificationName
+												   object:nil];
+	}
+	return self;
+}
+
+- (void)dealloc
+{
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	
 	[self setupSegmentedControl];
+	[self localizeSegmentedControl];
 }
 
 #pragma mark - Language switcher
@@ -44,6 +61,18 @@
 	[self.segmentedControl addTarget:self
 							  action:@selector(segmentedControlValueChanged)
 					forControlEvents:UIControlEventValueChanged];
+}
+
+- (void)localizeSegmentedControl
+{
+	NSOrderedSet *supportedLanguages = [[DRLocalization sharedInstance] supportedLanguages];
+	[supportedLanguages enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+		if (self.segmentedControl.numberOfSegments > idx) {
+			NSString *langCode = (NSString *)obj;
+			NSString *localizedString = [[DRLocalization sharedInstance] stringForKey:[NSString stringWithFormat:@"language_%@", langCode]];
+			[self.segmentedControl setTitle:localizedString forSegmentAtIndex:idx];
+		}
+	}];
 }
 
 - (void)segmentedControlValueChanged
