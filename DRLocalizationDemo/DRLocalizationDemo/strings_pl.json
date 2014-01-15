@@ -1,3 +1,7 @@
 {
-	"hello_world": "Witaj Świecie"
+	"language_en": "Angielski",
+	"language_pl": "Polski",
+	"language_de": "Niemiecki",
+	"hello_world": "Witaj Świecie",
+	"flag_image": "flag-pl"
 }
