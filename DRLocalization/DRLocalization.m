@@ -178,7 +178,9 @@ static NSString *DRLocalizationCurrentLanguageUserDefaultsKey = @"DRLocalization
 		
 		if (!string && fallback) {
 			#ifdef DEBUG
-				NSLog(@"Localization not found for key: \"%@\" language: \"%@\"", key, language);
+			NSLog((@"%s [Line %d]: " @"Localization not found for key: \"%@\" language: \"%@\""), __PRETTY_FUNCTION__, __LINE__,
+				  key,
+				  language);
 			#endif
 			string = [key copy];
 		}

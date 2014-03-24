@@ -31,10 +31,30 @@
 	if ([[self.supportedLanguages firstObject] isEqualToString:language]) {
 		NSData *JSONData = [NSData dataWithContentsOfFile:self.filePath];
 		if (JSONData) {
-			NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:JSONData options:0 error:nil];
-			if ([dictionary isKindOfClass:[NSDictionary class]]) {
+			NSError *error = nil;
+			NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:JSONData options:0 error:&error];
+			if (error) {
+				#ifdef DEBUG
+				NSLog((@"%s [Line %d]: " @"Error reading JSON file: \"%@\": %@"), __PRETTY_FUNCTION__, __LINE__,
+					  [self.filePath lastPathComponent],
+					  error.localizedDescription);
+				#endif
+			}
+			else if ([dictionary isKindOfClass:[NSDictionary class]]) {
 				string = dictionary[key];
 			}
+			else {
+				#ifdef DEBUG
+				NSLog((@"%s [Line %d]: " @"Error reading JSON file: \"%@\": invalid data"), __PRETTY_FUNCTION__, __LINE__,
+					  [self.filePath lastPathComponent]);
+				#endif
+			}
+		}
+		else {
+			#ifdef DEBUG
+			NSLog((@"%s [Line %d]: " @"Unable to load data from JSON file: \"%@\""), __PRETTY_FUNCTION__, __LINE__,
+				  [self.filePath lastPathComponent]);
+			#endif
 		}
 	}
 	
