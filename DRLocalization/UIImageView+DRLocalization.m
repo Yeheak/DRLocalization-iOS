@@ -24,6 +24,10 @@
 	else {
 		[super DRLocalize];
 	}
+	
+	if (self.DRPostLocalizationBlock) {
+		self.DRPostLocalizationBlock(self);
+	}
 }
 
 @end

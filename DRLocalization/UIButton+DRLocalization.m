@@ -24,6 +24,10 @@
 	}
 	
 	[self sizeToFit];
+	
+	if (self.DRPostLocalizationBlock) {
+		self.DRPostLocalizationBlock(self);
+	}
 }
 
 @end

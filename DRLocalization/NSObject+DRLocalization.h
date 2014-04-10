@@ -8,7 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void (^DRPostLocalizationBlock)(id localizedObject);
+
 @interface NSObject (DRLocalization)
+
+/**
+ *  Block that will be called after localization (optional)
+ */
+@property (nonatomic, copy) DRPostLocalizationBlock DRPostLocalizationBlock;
 
 /**
  *  Localization key used by DRLocalization library
