@@ -14,6 +14,7 @@
 static NSString *DRLocalizationKeyKey = @"DRLocalizationKeyKey";
 static NSString *DRLocalizationKeyPathKey = @"DRLocalizationKeyPathKey";
 static NSString *DRLocalizationDeallocHelperKey = @"DRLocalizationDeallocHelperKey";
+static NSString *DRPostLocalizationBlockKey = @"DRPostLocalizationBlockKey";
 
 @implementation NSObject (DRLocalization)
 
@@ -50,6 +51,10 @@ static NSString *DRLocalizationDeallocHelperKey = @"DRLocalizationDeallocHelperK
 	if (key && keyPath) {
 		[self setValue:[[DRLocalization sharedInstance] stringForKey:key] forKey:keyPath];
 	}
+	
+	if (self.DRPostLocalizationBlock) {
+		self.DRPostLocalizationBlock(self);
+	}
 }
 
 #pragma mark Getters and setters
@@ -83,6 +88,16 @@ static NSString *DRLocalizationDeallocHelperKey = @"DRLocalizationDeallocHelperK
 - (NSString *)DRLocalizationKeyPath
 {
 	return objc_getAssociatedObject(self, (__bridge const void *)(DRLocalizationKeyPathKey));
+}
+
+- (DRPostLocalizationBlock)DRPostLocalizationBlock
+{
+	return objc_getAssociatedObject(self, (__bridge const void *)(DRPostLocalizationBlockKey));
+}
+
+- (void)setDRPostLocalizationBlock:(DRPostLocalizationBlock)DRPostLocalizationBlock
+{
+	objc_setAssociatedObject(self, (__bridge void *)DRPostLocalizationBlockKey, [DRPostLocalizationBlock copy], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end
